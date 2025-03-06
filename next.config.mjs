@@ -8,7 +8,6 @@ const nextConfig = {
   basePath: "/me",
   // This ensures assets are properly referenced
   assetPrefix: "/me/",
-}
+};
 
-module.exports = nextConfig
-
+export default nextConfig;
