@@ -1,3 +1,4 @@
+// Update image paths to work with basePath
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 import Link from "next/link"
 import Experience from "@/components/experience"
@@ -7,6 +8,9 @@ import Education from "@/components/education"
 import Contact from "@/components/contact"
 
 export default function Home() {
+  // Get the base path from environment or default to '/me'
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/me"
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header/Hero Section */}
