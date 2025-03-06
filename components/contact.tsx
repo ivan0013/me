@@ -86,7 +86,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-medium">Location</h3>
-                  <p className="text-sm text-muted-foreground">Avenida Rubine 23, A Coruña, Spain</p>
+                  <p className="text-sm text-muted-foreground">A Coruña, Spain</p>
                 </div>
               </div>
 
