@@ -3,6 +3,8 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Toaster } from "@/components/ui/toaster"
+import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeScript } from "./theme-script"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -18,10 +20,38 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Add inline script to prevent theme flashing */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const theme = localStorage.getItem('theme') || 'system';
+                  
+                  if (theme === 'system') {
+                    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+                      ? 'dark'
+                      : 'light';
+                    document.documentElement.classList.add(systemTheme);
+                  } else {
+                    document.documentElement.classList.add(theme);
+                  }
+                } catch (e) {
+                  console.error('Error applying theme:', e);
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={inter.className}>
-        {children}
-        <Toaster />
+        <ThemeProvider defaultTheme="system">
+          <ThemeScript />
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -1,4 +1,3 @@
-// Update image paths to work with basePath
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 import Link from "next/link"
 import Experience from "@/components/experience"
@@ -6,6 +5,7 @@ import Projects from "@/components/projects"
 import Skills from "@/components/skills"
 import Education from "@/components/education"
 import Contact from "@/components/contact"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
   // Get the base path from environment or default to '/me'
@@ -16,49 +16,57 @@ export default function Home() {
       {/* Header/Hero Section */}
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 z-0" />
-        <div className="grid lg:grid-cols-2 gap-8 items-center container py-20 relative z-10">
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Iván Rodríguez Torres</h1>
-              <h2 className="text-2xl md:text-3xl text-muted-foreground">Software Engineer</h2>
-            </div>
-            <p className="text-lg text-muted-foreground max-w-md">
-              Technical Lead with expertise in AI, microservices, and full-stack development. Building innovative
-              solutions that drive business success.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="#contact"
-                className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1"
-              >
-                Contact Me
-              </Link>
-              <Link
-                href="#experience"
-                className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1"
-              >
-                View Experience
-              </Link>
-            </div>
-            <div className="flex items-center gap-4 text-muted-foreground">
-              <Link href="https://github.com" className="hover:text-foreground transition-colors">
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </Link>
-              <Link href="https://linkedin.com" className="hover:text-foreground transition-colors">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link href="mailto:ivan.rodriguez.torres@outlook.com" className="hover:text-foreground transition-colors">
-                <Mail className="h-5 w-5" />
-                <span className="sr-only">Email</span>
-              </Link>
-            </div>
+        <div className="container relative z-10">
+          <div className="flex justify-end py-4">
+            <ThemeToggle />
           </div>
-          <div className="relative h-[300px] w-[300px] mx-auto lg:mx-0 lg:ml-auto">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-primary-foreground/20 animate-rotate-slow" />
-            <div className="absolute inset-[6px] rounded-full bg-muted flex items-center justify-center">
-              <div className="text-6xl font-bold">IR</div>
+          <div className="grid lg:grid-cols-2 gap-8 items-center py-16">
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Iván Rodríguez Torres</h1>
+                <h2 className="text-2xl md:text-3xl text-muted-foreground">Software Engineer</h2>
+              </div>
+              <p className="text-lg text-muted-foreground max-w-md">
+                Technical Lead with expertise in AI, microservices, and full-stack development. Building innovative
+                solutions that drive business success.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="#contact"
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1"
+                >
+                  Contact Me
+                </Link>
+                <Link
+                  href="#experience"
+                  className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1"
+                >
+                  View Experience
+                </Link>
+              </div>
+              <div className="flex items-center gap-4 text-muted-foreground">
+                <Link href="https://github.com" className="hover:text-foreground transition-colors">
+                  <Github className="h-5 w-5" />
+                  <span className="sr-only">GitHub</span>
+                </Link>
+                <Link href="https://linkedin.com" className="hover:text-foreground transition-colors">
+                  <Linkedin className="h-5 w-5" />
+                  <span className="sr-only">LinkedIn</span>
+                </Link>
+                <Link
+                  href="mailto:ivan.rodriguez.torres@outlook.com"
+                  className="hover:text-foreground transition-colors"
+                >
+                  <Mail className="h-5 w-5" />
+                  <span className="sr-only">Email</span>
+                </Link>
+              </div>
+            </div>
+            <div className="relative h-[300px] w-[300px] mx-auto lg:mx-0 lg:ml-auto">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-primary-foreground/20 animate-rotate-slow" />
+              <div className="absolute inset-[6px] rounded-full bg-muted flex items-center justify-center">
+                <div className="text-6xl font-bold">IR</div>
+              </div>
             </div>
           </div>
         </div>
@@ -84,7 +92,7 @@ export default function Home() {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <MapPin className="h-5 w-5 text-muted-foreground" />
-                <span>A Coruña, Spain</span>
+                <span>Avenida Rubine 23, A Coruña, Spain</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-5 w-5 text-muted-foreground" />
