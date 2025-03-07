@@ -92,7 +92,7 @@ export default function Home() {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <MapPin className="h-5 w-5 text-muted-foreground" />
-                <span>Avenida Rubine 23, A Coruña, Spain</span>
+                <span>A Coruña, Spain</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-5 w-5 text-muted-foreground" />
