@@ -65,10 +65,10 @@ export default function Home() {
             <div className="relative h-[300px] w-[300px] mx-auto lg:mx-0 lg:ml-auto">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-primary-foreground/20 animate-rotate-slow" />
               <div className="absolute inset-[6px] rounded-full bg-muted flex items-center justify-center">
-              <img 
-                src="https://media.licdn.com/dms/image/v2/D4D03AQFSC1pPS5lJ-Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1670257881033?e=1747872000&amp;v=beta&amp;t=JxdyKT0DliOh9xc8rM4lojHfDY8SU-g3yAUGMKw8bzg" 
-                style={{ width: "100%", height: "auto", borderRadius: "100%" }} 
-                alt="Profile photo" 
+              <img
+                src="https://github.com/ivan0013/me/blob/main/public/profile.jpeg?raw=true"
+                style={{ width: "100%", height: "auto", borderRadius: "100%" }}
+                alt="Profile photo"
               />
 
               </div>
